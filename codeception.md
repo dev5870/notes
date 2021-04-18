@@ -286,6 +286,7 @@ extensions:
 - **5.2 Конфиг suite файла**
 
   *В конфиг необходимо подключить созданный helper файл.*
+  
       class_name: AcceptanceTester
       modules:
           enabled:
