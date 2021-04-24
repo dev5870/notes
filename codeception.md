@@ -116,7 +116,7 @@ modules:
    enabled:
        - REST:
            depends: PhpBrowser
-           url: &url 'http://your.domain/api/v1/' # you only need the &url anchor for further PhpBrowser configs
+           url: &url 'http://your.domain/' # you only need the &url anchor for further PhpBrowser configs
            shortDebugResponse: 300 # only the first 300 chars of the response
        - Db:
            dsn: mysql:host=localhost;dbname=name
@@ -286,7 +286,7 @@ extensions:
 - **5.2 Конфиг suite файла**
 
   *В конфиг необходимо подключить созданный helper файл.*
-  
+
       class_name: AcceptanceTester
       modules:
           enabled:
