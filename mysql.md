@@ -38,19 +38,25 @@
 | select * from users where balance = 10 | Показать все записи из таблицы users, где balance = 10 |
 | select * from users where balance = 10 and mfa = 0 | Показать все записи из таблицы users, где balance = 10 и mfa = 0 |
 
-#### SETTING
-
-| Команда | Описание |
-| ------- | -------- |
-| show variables like 'lower_case_%' | Показывает состояние вкл/выкл приведения к нижнему регистру |
-
 #### GRANT
 
 | Команда | Описание |
 | ------- | -------- |
 | GRANT ALL PRIVILEGES ON db_name.* TO user@localhost with grant option; | Даем привилегии на базу данных определенному пользователю |
 
-##### Примеры
+#### UNION
+
+| Команда | Описание |
+| ------- | -------- |
+| select sum(sum) as salary_log from user_salary_log where user_id = 30955 UNION select salary as salary from users where id = 30955 | Объединение двух запросов в один |
+
+#### SETTING
+
+| Команда | Описание |
+| ------- | -------- |
+| show variables like 'lower_case_%' | Показывает состояние вкл/выкл приведения к нижнему регистру |
+
+## Примеры
 
 1. Задача:
 
