@@ -38,6 +38,12 @@
 | select * from users where balance = 10 | Показать все записи из таблицы users, где balance = 10 |
 | select * from users where balance = 10 and mfa = 0 | Показать все записи из таблицы users, где balance = 10 и mfa = 0 |
 
+#### SETTING
+
+| Команда | Описание |
+| ------- | -------- |
+| show variables like 'lower_case_%' | Показывает состояние вкл/выкл приведения к нижнему регистру |
+
 #### GRANT
 
 | Команда | Описание |
