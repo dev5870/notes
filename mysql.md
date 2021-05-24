@@ -24,6 +24,12 @@
 | create database db_name | Создание базы данных |
 | create user 'userName'@'localhost' identified by 'password' | Создание пользователя БД |
 
+#### UPDATE
+
+| Команда | Описание |
+| ------------- | ------------- |
+| update ips set tm_last_seen='2022-05-23 18:08:58' | Обновить таблицу ips, установить всем значениям в столбце `tm_last_seen` = дате |
+
 #### DROP
 
 | Команда | Описание |
