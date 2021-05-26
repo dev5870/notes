@@ -308,3 +308,8 @@ extensions:
           return $db->grabColumnFromDatabase('users', 'email', array('id' => $id));
         }
       }
+
+  - Аналогичным образом, возможно подключать в custom методах не только модули Codeception, но и другие Helpers методы:
+  ```
+  $user = $this->getModule("\Helper\User");
+  ```
