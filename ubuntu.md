@@ -156,8 +156,8 @@
   - `mkcert local-domain.com '*.local-domain.com' localhost 127.0.0.1 ::1`
   - данные генерируются в текущую директорию, в таком виде:
     ```
-    kifarunix-demo.com+4-key.pem
-    kifarunix-demo.com+4.pem
+    local-domain.com+4-key.pem
+    local-domain.com+4.pem
     ```
   
 - Включаем поддержку SSL в Nginx  
@@ -167,7 +167,7 @@
     listen 443 ssl;
     
     ssl on;
-    ssl_certificate /home/koromicha/kifarunix-demo.com+4.pem;
-    ssl_certificate_key /home/koromicha/kifarunix-demo.com+4-key.pem;
+    ssl_certificate /home/путь_к_директории/local-domain.com+4.pem;
+    ssl_certificate_key /home/путь_к_директории/local-domain.com+4-key.pem;
     ```
   - перезагружаем Nginx: `sudo service nginx restart`
