@@ -131,3 +131,43 @@
 - Далее: `sudo service network-manager stop`   
 - Указываем новый IP: `sudo ifconfig lo 127.0.0.2`  
 - Запускаем: `sudo service network-manager start`
+
+---
+
+#### Валидные SSL сертификаты для локальных доменов
+
+- Устанавливаем **mkcert**:  
+  - `sudo apt install libnss3-tools -y`  
+  - `wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64`  
+  - `sudo cp mkcert-v1.4.3-linux-amd64 /usr/local/bin/mkcert`  
+  - `sudo chmod +x /usr/local/bin/mkcert`  
+  
+
+- Генерируем локальный CA: `mkcert -install`
+  ```
+  The local CA is now installed in the system trust store! ⚡️
+  The local CA is now installed in the Firefox and/or Chrome/Chromium trust store (requires browser restart)!
+  ```
+  
+- Расположение локальной директории CA: `mkcert -CAROOT`
+
+
+- Создаем SSL для локального домена:  
+  - `mkcert local-domain.com '*.local-domain.com' localhost 127.0.0.1 ::1`
+  - данные генерируются в текущую директорию, в таком виде:
+    ```
+    kifarunix-demo.com+4-key.pem
+    kifarunix-demo.com+4.pem
+    ```
+  
+- Включаем поддержку SSL в Nginx  
+  - в конфиг добавляем:
+    ```
+    listen 80;
+    listen 443 ssl;
+    
+    ssl on;
+    ssl_certificate /home/koromicha/kifarunix-demo.com+4.pem;
+    ssl_certificate_key /home/koromicha/kifarunix-demo.com+4-key.pem;
+    ```
+  - перезагружаем Nginx: `sudo service nginx restart`
