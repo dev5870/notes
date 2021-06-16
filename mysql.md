@@ -63,6 +63,29 @@
 | ------- | -------- |
 | show variables like 'lower_case_%' | Показывает состояние вкл/выкл приведения к нижнему регистру |
 
+**ERROR 1819 (HY000): Your password does not satisfy the current policy requirements**
+
+**Фикс:**  
+- выполняем: `SHOW VARIABLES LIKE 'validate_password%';`  
+```
++--------------------------------------+--------+
+| Variable_name                        | Value  |
++--------------------------------------+--------+
+| validate_password.check_user_name    | ON     |
+| validate_password.dictionary_file    |        |
+| validate_password.length             | 8      |
+| validate_password.mixed_case_count   | 1      |
+| validate_password.number_count       | 1      |
+| validate_password.policy             | MEDIUM |
+| validate_password.special_char_count | 1      |
++--------------------------------------+--------+
+```
+
+- понижаем уровень проверки: `SET GLOBAL validate_password.length=7;`
+- либо выполняем запрос в соответствии с требованиями
+
+---
+
 ## Примеры
 
 1. Задача:
