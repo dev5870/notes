@@ -171,3 +171,11 @@
     ssl_certificate_key /home/путь_к_директории/local-domain.com+4-key.pem;
     ```
   - перезагружаем Nginx: `sudo service nginx restart`
+  
+---
+
+#### Команда sudo без пароля
+
+- Выполняем `sudo visudo`
+- Добавляем `имя_пользователя ALL=(ALL) NOPASSWD: ALL`
+![Команда sudo без пароля](https://raw.githubusercontent.com/kostyashelest/notes/master/img/sudo.png)  
