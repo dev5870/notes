@@ -6,62 +6,63 @@
 
 | Команда | Описание |
 | ------------- | ------------- |
-| mysql -u root -p  | Авторизация под пользователем root  |
-| mysql.server start | Start mysql на macos  |
-| sudo service mysql start/restart/stop | Старт, рестарт, стоп mysql в Ubuntu |
-| mysqldump -uroot -p db_name > file_name.sql | Бэкап базы данных |
-| mysql db_name -u user_name -p < dump.sql | Залить базу на сервер mysql |
-| show databases | Показать список всех баз данных |
-| use db_name | Переход в определенную базу данных |
-| show tables | Показать все таблицы в базе данных |
-| show columns from table_name | Показать все столбцы в таблице |
-| select count(*) from table_name | Считаем количество записей в таблице |
+| `mysql -u root -p`  | Авторизация под пользователем root  |
+| `mysql.server start` | Start mysql на macos  |
+| `sudo service mysql start/restart/stop` | Старт, рестарт, стоп mysql в Ubuntu |
+| `mysqldump -uroot -p db_name > file_name.sql` | Бэкап базы данных |
+| `mysql db_name -u user_name -p < dump.sql` | Залить базу на сервер mysql |
+| `show databases` | Показать список всех баз данных |
+| `use db_name` | Переход в определенную базу данных |
+| `show tables` | Показать все таблицы в базе данных |
+| `show columns from table_name` | Показать все столбцы в таблице |
+| `select count(*) from table_name` | Считаем количество записей в таблице |
+| `truncate table tb_name` | Очистить таблицу |
 
 #### CREATE
 
 | Команда | Описание |
 | ------------- | ------------- |
-| create database db_name | Создание базы данных |
-| create user 'userName'@'localhost' identified by 'password' | Создание пользователя БД |
+| `create database db_name` | Создание базы данных |
+| `create user 'userName'@'localhost' identified by 'password'` | Создание пользователя БД |
 
 #### UPDATE
 
 | Команда | Описание |
 | ------------- | ------------- |
-| update ips set tm_last_seen='2022-05-23 18:08:58' | Обновить таблицу ips, установить всем значениям в столбце `tm_last_seen` = дате |
-| update users set users.email = users.id | Присвоить значение столбца `id` столбцу `email` в таблице `users` |
+| `update ips set tm_last_seen='2022-05-23 18:08:58'` | Обновить таблицу ips, установить всем значениям в столбце `tm_last_seen` = дате |
+| `update users set users.email = users.id` | Присвоить значение столбца `id` столбцу `email` в таблице `users` |
 
 #### DROP
 
 | Команда | Описание |
 | ------------- | ------------- |
-| drop user 'userName'@'localhost' | Удаление пользователя БД |
+| `drop user 'userName'@'localhost'` | Удаление пользователя БД |
 
 #### SELECT
 
 | Команда | Описание |
 | ------------- | ------------- |
-| select * from users | Показать все записи из таблицы users |
-| select * from users where balance = 10 | Показать все записи из таблицы users, где balance = 10 |
-| select * from users where balance = 10 and mfa = 0 | Показать все записи из таблицы users, где balance = 10 и mfa = 0 |
+| `select * from users` | Показать все записи из таблицы users |
+| `select * from users where balance = 10` | Показать все записи из таблицы users, где balance = 10 |
+| `select * from users where balance = 10 and mfa = 0` | Показать все записи из таблицы users, где balance = 10 и mfa = 0 |
 
 #### GRANT
 
 | Команда | Описание |
 | ------- | -------- |
-| GRANT ALL PRIVILEGES ON db_name.* TO user@localhost with grant option; | Даем привилегии на базу данных определенному пользователю |
+| `GRANT ALL PRIVILEGES ON db_name.* TO user@localhost with grant option;` | Даем привилегии на базу данных определенному пользователю |
 
 #### UNION
 
 | Команда | Описание |
 | ------- | -------- |
-| select sum(sum) as salary_log from user_salary_log where user_id = 30955 UNION select salary as salary from users where id = 30955 | Объединение двух запросов в один |
+| `select sum(sum) as salary_log from user_salary_log where user_id = 30955 UNION select salary as salary from users where id = 30955` | Объединение двух запросов в один |
 
 #### SETTING
 
 | Команда | Описание |
 | ------- | -------- |
-| show variables like 'lower_case_%' | Показывает состояние вкл/выкл приведения к нижнему регистру |
+| `show variables like 'lower_case_%'` | Показывает состояние вкл/выкл приведения к нижнему регистру |
 
 **ERROR 1819 (HY000): Your password does not satisfy the current policy requirements**
 
@@ -88,15 +89,15 @@
 
 ## Примеры
 
-1. Задача:
+#### 1. Задача:
 
-  *Показать все значения из столбцов id, balance, в таблице users, где balance = 10*
+*Показать все значения из столбцов id, balance, в таблице users, где balance = 10*
 
-  Запрос:
+Запрос:
 
-  `select id, balance from users where balance = 10`
+`select id, balance from users where balance = 10`
 
-  Результат:
+Результат:
 ```
 | id     | balance |
 |--------|---------|
@@ -116,15 +117,15 @@
 | 157937 | 10.00   |
 ```
 
-2. Задача:
+#### 2. Задача:
 
-  *Показать все значения из столбцов id, balance, в таблице users, где email содержит слово test и balance > 1000*
+*Показать все значения из столбцов id, balance, в таблице users, где email содержит слово test и balance > 1000*
 
-  Запрос:
+Запрос:
 
-  `select id, balance from users where email like '%test%' and balance > 1000`
+`select id, balance from users where email like '%test%' and balance > 1000`
 
-  Результат:
+Результат:
 ```
 | id     | balance    |
 |--------|------------|
@@ -143,15 +144,15 @@
 | 157921 | 99803.00   |
 ```
 
-3. Задача:
+#### 3. Задача:
 
-  *Показать значение столбца utm_source с группировкой по количеству*
+*Показать значение столбца utm_source с группировкой по количеству*
 
-  Запрос:
+Запрос:
 
-  `select utm_source, count(*) from users group by utm_source`
+`select utm_source, count(*) from users group by utm_source`
 
-  Результат:
+Результат:
 ```
 | utm_source | count(*) |
 |------------|----------|
@@ -170,15 +171,15 @@
 | cparip     | 10       |
 ```
 
-4. Задача:
+#### 4. Задача:
 
-  *Сортировка результатов. По умолчанию сортирует по возрастанию. Для сортировки по убыванию необходимо добавить desc*
+*Сортировка результатов. По умолчанию сортирует по возрастанию. Для сортировки по убыванию необходимо добавить desc*
 
-  Запрос:
+Запрос:
 
-  `select id, balance from users where balance > 100000 order by balance`
+`select id, balance from users where balance > 100000 order by balance`
 
-  Результат:
+Результат:
 ```
 | id     | balance       |
 |--------|---------------|
@@ -190,30 +191,30 @@
 | 15753  | 3243234234.00 |
 ```
 
-5. Задача:
+#### 5. Задача:
 
-  *Получить сумму значений в столбце num, для записей у которых столбец date=2021-04-01*
+*Получить сумму значений в столбце num, для записей у которых столбец date=2021-04-01*
 
-  Запрос:
+Запрос:
 
-  `select sum(num) from stat_account where date='2021-04-01'`
+`select sum(num) from stat_account where date='2021-04-01'`
 
-  Результат:
+Результат:
 ```
 | sum(num) |
 |----------|
 | 1702     |
 ```
 
-6. Задача:
+#### 6. Задача:
 
-  *Вывести дубликаты записей (одинаковую сумму баланса) с группировкой по сумме и количеством одинаковых дубликатов*
+*Вывести дубликаты записей (одинаковую сумму баланса) с группировкой по сумме и количеством одинаковых дубликатов*
 
-  Запрос:
+Запрос:
 
-  `select balance, count(*) as count from users group by balance having count(*) > 1 order by count`
+`select balance, count(*) as count from users group by balance having count(*) > 1 order by count`
 
-  Результат:
+Результат:
 ```
 | balance       | count |
 |---------------|-------|
@@ -231,4 +232,62 @@
 | 10.00000000   | 15    |
 | 2.00000000    | 23    |
 | 3.00000000    | 35    |
+```
+
+#### 7. Задача:
+
+*Вывести размер баз данных*
+  
+Запрос:
+  
+```
+SELECT table_schema "DB Name", 
+Round(Sum(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB" 
+FROM   information_schema.tables 
+GROUP  BY table_schema; 
+```
+
+Результат:
+
+```
+| DB Name               | DB Size in MB |
+| --------------------- | ------------- |
+| mysql                 | 3.7           |
+| information_schema    | 0.0           |
+| db_name1              | 697.5         |
+| db_name2              | 1.9           |
+| db_name3              | 4971.5        |
+| db_name4              | 2.1           |
+| db_name5              | 4316.2        |
+| db_name6              | 7702.3        |
+
+```
+
+#### 8. Задача:
+
+*Вывести размер таблиц в конкретной базе данных*
+
+Запрос:
+
+```
+SELECT
+table_name AS "Table",  
+round(((data_length + index_length) / 1024 / 1024), 2) as size   
+FROM information_schema.TABLES  
+WHERE table_schema = "YOUR_DATABASE_NAME"  
+ORDER BY size DESC; 
+```
+
+Результат:
+
+```
+| Table    | size    |
+| -------- | ------- |
+| tb_name1 | 2210.28 |
+| tb_name2 | 2110.20 |
+| tb_name3 | 323.98  |
+| tb_name4 | 315.97  |
+| tb_name5 | 4.33    |
+| tb_name6 | 2.52    |
+| tb_name7 | 1.59    |
 ```

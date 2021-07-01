@@ -2,63 +2,39 @@
 
 ---
 
-1. PULL ветки master в локальную ветку master:  
-    `git pull origin master`
-   
+#### Основное
 
-2. PULL удаленной ветки в локальную ветку:  
-    `git pull origin dfdev-1844`
-   
+| Команда | Описание |
+| ------- | -------- |
+| `git pull origin master` | PULL ветки master в локальную ветку master |
+| `git pull origin dfdev-1844` | PULL удаленной ветки в локальную ветку |
+| `git checkout -b dfdev-1844` | Создание и переключение на новую ветку. *NOTE: Имеет значение с какой ветки создаем и переходим! Предварительно переходим в master* |
+| `git push origin dfdev-codeception` | PUSH локальной ветки в удаленный репозиторий |
+| `git branch -d dfdev-seoOpitmize` | Удаление локальной ветки |
+| `git stash save -u` | Спрятать изменения, если файлы не в индексе |
+| `git stash save` | Спрятать изменения, если файлы в индексе |
+| `git stash pop` | Вернуть изменения к работе |
+| `git branch --merged master -a` | Отобразить список слитых в мастер веток (локальные и удаленные) |
+| `git fetch` | Как git pull, только без merge. Fetch подтягивает удаленные ветки, но не объединяет их с локальными. |
+| `git commit --amend -m "New commit"` | Изменить описание последнего коммита |
 
-3. Создание и переключение на новую ветку:  
-    `git checkout -b dfdev-1844`
-   
-- *NOTE: Имеет значение с какой ветки создаем и переходим! Предварительно переходим в master*
+---
 
-
-4. PUSH локальной ветки в удаленный репозиторий:  
-    `git push origin dfdev-codeception`
-
-
-5. Удаление локальной ветки:  
-    `git branch -d dfdev-seoOpitmize`
-
-- *если есть неслитые изменения, то:*  
-`git branch -D dfdev-seoOpitmize`
-
-  
-6. Спрятать изменения:  
-- *Если файлы не добавлены в индекс:*  
-    `git stash save -u`
-
-- *Если файлы в индексе:*  
-    `git stash save`
-
-- *Вернуться к работе:*  
-    `git stash pop`
-
-
-7. Слияние веток:  
+#### Слияние веток:  
 - *Переключаемся на ветку в которую сливаем:*  
 `git checkout dfdev-codeception`
 
 - *Сливаем в ветку dfdev-codeception ветку dfdev-1497:*  
 `git merge dfdev-1497`
   
+---
 
-8. Отмена слияния веток:  
+#### Отмена слияния веток:  
+
+- Выводим лог:  
 `git reflog`
 
 - *Находите хэш коммита, к которому хотите вернуть изменения. Будет что-то вроде "8f05e00 HEAD@{4}: checkout: moving from
 master to sphere" или "4c31200 HEAD@{10}: commit: Awesome feature implemented."*  
 `git reset --hard [нужный хэш]`
-
-
-9. FETCH  
-`git fetch`
-
-- *Как git pull, только без merge. Fetch подтягивает удаленные ветки, но не объединяет их с локальными.*
-
-
-10. Изменить описание последнего коммита  
-    `git commit --amend -m "New commit"`
+  
