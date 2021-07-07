@@ -17,24 +17,33 @@
 | `git branch --merged master -a` | Отобразить список слитых в мастер веток (локальные и удаленные) |
 | `git fetch` | Как git pull, только без merge. Fetch подтягивает удаленные ветки, но не объединяет их с локальными. |
 | `git commit --amend -m "New commit"` | Изменить описание последнего коммита |
+| gitignore через exclude | В файле `.git/info/exclude` можно добавлять правила |
+| `git remote show origin` | Показать remote url |
+| `git remote set-url origin new.git.url/here` | Установить новый remote origin url |
 
 ---
 
-#### Слияние веток:  
+#### Слияние веток:
 - *Переключаемся на ветку в которую сливаем:*  
-`git checkout dfdev-codeception`
+  `git checkout dfdev-codeception`
 
 - *Сливаем в ветку dfdev-codeception ветку dfdev-1497:*  
-`git merge dfdev-1497`
+  `git merge dfdev-1497`
+
+---
+
+#### Отмена слияния веток:
+
+- Выводим лог:  
+  `git reflog`
+
+- *Находите хэш коммита, к которому хотите вернуть изменения. Будет что-то вроде "8f05e00 HEAD@{4}: checkout: moving from
+  master to sphere" или "4c31200 HEAD@{10}: commit: Awesome feature implemented."*  
+  `git reset --hard [нужный хэш]`
   
 ---
 
-#### Отмена слияния веток:  
+#### Отката последнего commit
 
-- Выводим лог:  
-`git reflog`
-
-- *Находите хэш коммита, к которому хотите вернуть изменения. Будет что-то вроде "8f05e00 HEAD@{4}: checkout: moving from
-master to sphere" или "4c31200 HEAD@{10}: commit: Awesome feature implemented."*  
-`git reset --hard [нужный хэш]`
-  
+- Откатываемся к предыдущему изменению: `git reset --hard 743acea`
+- Делаем push: `git push origin branch_name --force`
