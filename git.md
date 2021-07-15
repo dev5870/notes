@@ -20,6 +20,7 @@
 | gitignore через exclude | В файле `.git/info/exclude` можно добавлять правила |
 | `git remote show origin` | Показать remote url |
 | `git remote set-url origin new.git.url/here` | Установить новый remote origin url |
+| `git log origin/branch-name..HEAD` | Просмотр незапушенных комитов |
 
 ---
 
