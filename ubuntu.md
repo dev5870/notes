@@ -169,7 +169,6 @@
 - Включаем поддержку SSL в Nginx  
   - в конфиг добавляем:
     ```
-    listen 80;
     listen 443 ssl;
     
     ssl on;
@@ -185,3 +184,14 @@
 - Выполняем `sudo visudo`
 - Добавляем `имя_пользователя ALL=(ALL) NOPASSWD: ALL`
 ![Команда sudo без пароля](https://raw.githubusercontent.com/kostyashelest/notes/master/img/sudo.png)  
+
+---
+
+#### Решение ошибки: connect() to unix:/run/php/php8.0-fpm.sock failed (13: Permission denied) while connecting to upstream
+
+- В файле: `/etc/nginx/nginx.conf`, указать своего юзера: `user www-data;`
+- В файле: `/etc/php/7.4/fpm/pool.d/www.conf`, указать своего пользователя и группу:
+```
+user = www-data
+group = www-data
+```
