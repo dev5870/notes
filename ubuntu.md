@@ -1,4 +1,3 @@
-
 # Ubuntu
 
 ---
@@ -7,6 +6,13 @@
 
 | Команда | Описание |
 | ------------- | ------------- |
+| `lsb_release -a` | Выводит информацию об ОС |
+| `id` | Выводит информацию о текущем пользователе |
+| `cat /etc/passwd` | Просмотр зарегистрированных пользователей |
+| `groups` | Выводит общий список групп |
+| `id -Gn` | Выводит список групп текущего пользователя |
+| `id www-data -Gn` | Выводит список групп указанного пользователя |
+| `usermod -a -G group_name user_name` | Добавить пользователя в дополнительную группу |
 | `sudo cp /dev/null filename`  | Очистить файл через терминал  |
 | `rm -rf dir_name/*` | Очистить директорию (без удаления директории)  |
 | `tail -1 filename.txt` | Вывести последнюю одну строку файла |
@@ -163,7 +169,6 @@
 - Включаем поддержку SSL в Nginx  
   - в конфиг добавляем:
     ```
-    listen 80;
     listen 443 ssl;
     
     ssl on;
@@ -171,3 +176,22 @@
     ssl_certificate_key /home/путь_к_директории/local-domain.com+4-key.pem;
     ```
   - перезагружаем Nginx: `sudo service nginx restart`
+  
+---
+
+#### Команда sudo без пароля
+
+- Выполняем `sudo visudo`
+- Добавляем `имя_пользователя ALL=(ALL) NOPASSWD: ALL`
+![Команда sudo без пароля](https://raw.githubusercontent.com/kostyashelest/notes/master/img/sudo.png)  
+
+---
+
+#### Решение ошибки: connect() to unix:/run/php/php8.0-fpm.sock failed (13: Permission denied) while connecting to upstream
+
+- В файле: `/etc/nginx/nginx.conf`, указать своего юзера: `user www-data;`
+- В файле: `/etc/php/7.4/fpm/pool.d/www.conf`, указать своего пользователя и группу:
+```
+user = www-data
+group = www-data
+```
