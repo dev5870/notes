@@ -11,6 +11,7 @@
 | `git checkout -b dfdev-1844` | Создание и переключение на новую ветку. *NOTE: Имеет значение с какой ветки создаем и переходим! Предварительно переходим в master* |
 | `git push origin dfdev-codeception` | PUSH локальной ветки в удаленный репозиторий |
 | `git branch -d dfdev-seoOpitmize` | Удаление локальной ветки |
+| `git push origin :old_branch ` | Удаление Remote ветки |
 | `git stash save -u` | Спрятать изменения, если файлы не в индексе |
 | `git stash save` | Спрятать изменения, если файлы в индексе |
 | `git stash pop` | Вернуть изменения к работе |
@@ -21,6 +22,7 @@
 | `git remote show origin` | Показать remote url |
 | `git remote set-url origin new.git.url/here` | Установить новый remote origin url |
 | `git log origin/branch-name..HEAD` | Просмотр незапушенных комитов |
+| `git branch -m old_branch_name new_branch_name` | Переименовать ветку |
 
 ---
 
