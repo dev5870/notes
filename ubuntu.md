@@ -196,3 +196,11 @@
 user = www-data
 group = www-data
 ```
+
+---
+
+#### Форматирование флешки в exfat
+
+- Устанавливаем утилиту: `sudo apt-get install exfat-utils exfat-fuse`  
+- Находим устройство, которое необходимо отформатировать: `sudo fdisk -l`  
+- Выполняем форматирование: `sudo mkfs.exfat -n LABEL /dev/sdb` (где *LABEL* - название флешки, а */dev/sdb* - путь к устройству)
