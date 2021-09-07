@@ -25,8 +25,13 @@
 ### 2. Запуск 4 окон терминала:
 
 ```
-gnome-terminal --geometry=101x26-925+0
-gnome-terminal --geometry=101x26+0-20
-gnome-terminal --geometry=101x26-0-20
-gnome-terminal --geometry=101x26-0-925
+#!/bin/bash
+# левый верхний
+gnome-terminal --geometry=57x26+0+0
+# левый нижний
+gnome-terminal --geometry=57x26+0-20
+# правый верхний
+gnome-terminal --geometry=101x26-2320+0
+# правый нижний
+gnome-terminal --geometry=101x26-2320-20
 ```
