@@ -71,6 +71,10 @@
   *формат 2:* `curl -x "socks5h://server-name:port" -u auser-login:password 2ip.ru`  
   *формат 3:* `curl -x "http://user-login:password@server-name:port" 2ip.ru`
 
+
+3. Скачивание файла через прокси с авторизацией:
+  `curl -x "socks5h://login:pass@server-name:port" -OL http://site.net/test.txt`
+
 ---
 
 #### CRON
