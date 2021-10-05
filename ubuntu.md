@@ -211,3 +211,14 @@ group = www-data
 - Устанавливаем утилиту: `sudo apt-get install exfat-utils exfat-fuse`  
 - Находим устройство, которое необходимо отформатировать: `sudo fdisk -l`  
 - Выполняем форматирование: `sudo mkfs.exfat -n LABEL /dev/sdb` (где *LABEL* - название флешки, а */dev/sdb* - путь к устройству)
+
+---
+
+#### Включение slow-log для php-fpm
+
+- Открываем файл `/etc/php/7.3/fpm/pool.d/www.conf`
+- Добавляем:
+```
+slowlog = /home/alex/workspace/slow-log-df.md
+request_slowlog_timeout = 2s
+```
