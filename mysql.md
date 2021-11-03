@@ -90,6 +90,13 @@
 
 ---
 
+#### Ошибка: General error: 1419 You do not have the SUPER privilege and binary logging is enabled
+
+1. Решение
+- `set global log_bin_trust_function_creators=1;`
+
+---
+
 ## Примеры
 
 #### 1. Задача:
