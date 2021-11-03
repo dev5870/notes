@@ -294,3 +294,20 @@ ORDER BY size DESC;
 | tb_name6 | 2.52    |
 | tb_name7 | 1.59    |
 ```
+
+---
+
+#### 9. Задача:
+
+*Вывести список кодировок таблиц для указанной базы*
+
+Запрос:
+
+```
+SELECT
+    TABLE_NAME,
+    TABLE_COLLATION,
+    TABLE_SCHEMA
+FROM information_schema.TABLES
+WHERE TABLE_SCHEMA IN ( 'db_name')
+```
