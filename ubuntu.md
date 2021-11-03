@@ -222,3 +222,10 @@ group = www-data
 slowlog = /home/alex/workspace/slow-log-df.md
 request_slowlog_timeout = 2s
 ```
+
+#### Локальный сервер доступный в интернете (ngrok)
+
+- Устанавливаем snapd: `sudo apt install snapd`
+- Устанавливаем ngrok: `sudo snap install ngrok`
+- Создаем тунель (делаем доступным локальный хост в интернете): `ngrok http -host-header=rewrite site.com` (site.com - любой адрес из локального хоста) 
+- В ответ получаем адрес для доступа к локальному хосту
