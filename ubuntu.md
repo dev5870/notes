@@ -39,7 +39,7 @@
 | `sudo chown omlook:www-data -R site.ru/` | смена владельца |
 | `cat file.txt \| wc -l` | подсчет количества строк в файле |
 | `grep "a" file.txt \| wc -w` | подсчет количества вхождений в файле |
-| `ls -l | wc` | подсчет количества файлов в текущей директории |
+| `ls -l \| wc` | подсчет количества файлов в текущей директории |
 | `wget -r -k -l 7 -p -nc -erobots=off --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0" site.ru` | wget |
 | `touch fileName.txt` | создание файла |
 | `dig site.ru txt` | проверка записей txt домена |
