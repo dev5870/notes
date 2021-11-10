@@ -39,6 +39,7 @@
 | `sudo chown omlook:www-data -R site.ru/` | смена владельца |
 | `cat file.txt \| wc -l` | подсчет количества строк в файле |
 | `grep "a" file.txt \| wc -w` | подсчет количества вхождений в файле |
+| `ls -l | wc` | подсчет количества файлов в текущей директории |
 | `wget -r -k -l 7 -p -nc -erobots=off --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0" site.ru` | wget |
 | `touch fileName.txt` | создание файла |
 | `dig site.ru txt` | проверка записей txt домена |
@@ -49,7 +50,7 @@
 
 ---
 
-### FIND
+#### FIND
 
 | Команда | Описание |
 | --- | --- |
@@ -82,7 +83,7 @@
 #### CRON
 
 1. Редактирование процессов cron (текущего пользователя):  
-  `crontab -e`
+  `crontab -e`  
   *Важно! Имеет значение из под какого пользователя выполняется запуск.*
 
 
@@ -101,8 +102,12 @@
 5. Просмотр логов:  
   `grep CRON /var/log/syslog`
 
+
 6. Вывод ошибок в файл:  
   `* * * * * /home/user/bin start 2>>/home/user/workspace/er.log`
+
+
+7. Настройка CRON описана в файле: [cron.md](cron.md)
 
 ---
 
@@ -195,6 +200,13 @@
 
 ---
 
+#### Решение ошибки: sudo: не удаётся исполнить /usr/bin/rm: Слишком длинный список аргументов
+
+- Возникает когда удаляется большое количество файлов
+- Как вариант добавить условие, например: rm test/*.png
+
+---
+
 #### Решение ошибки: connect() to unix:/run/php/php8.0-fpm.sock failed (13: Permission denied) while connecting to upstream
 
 - В файле: `/etc/nginx/nginx.conf`, указать своего юзера: `user www-data;`
@@ -223,9 +235,13 @@ slowlog = /home/alex/workspace/slow-log-df.md
 request_slowlog_timeout = 2s
 ```
 
+---
+
 #### Локальный сервер доступный в интернете (ngrok)
 
 - Устанавливаем snapd: `sudo apt install snapd`
 - Устанавливаем ngrok: `sudo snap install ngrok`
 - Создаем тунель (делаем доступным локальный хост в интернете): `ngrok http -host-header=rewrite site.com` (site.com - любой адрес из локального хоста) 
 - В ответ получаем адрес для доступа к локальному хосту
+
+---
