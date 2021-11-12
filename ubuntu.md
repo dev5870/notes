@@ -78,6 +78,37 @@
 3. Скачивание файла через прокси с авторизацией:
   `curl -x "socks5h://login:pass@server-name:port" -OL http://site.net/test.txt`
 
+
+4. Тестирование API:  
+```
+curl --location --request POST 'https://site.com/api/tg-bot' --header 'Content-Type: application/json' --data-raw '
+{
+    "message": {
+        "chat": {
+            "id": "11111111111111"
+        },
+        "from": {
+            "id": "11111111111111",
+            "username": "David"
+        },
+        "text": "hi6YEn"
+    },
+    "callback_query": {
+        "message": {
+            "chat": {
+                "id": "11111111111111"
+            },
+            "from": {
+                "id": "11111111111111",
+                "username": "David"
+            },
+            "text": "test"
+        },
+        "data": "tg_acc"
+    }
+}'
+```
+
 ---
 
 #### CRON
