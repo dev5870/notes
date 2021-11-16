@@ -50,3 +50,20 @@
 
 - Откатываемся к предыдущему изменению: `git reset --hard 743acea`
 - Делаем push: `git push origin branch_name --force`
+
+---
+
+#### Изменение файлов после коммита
+
+*Если забыли добавить один из файлов в коммит.*
+
+```
+# Правим first.php и second.php
+git add first.php
+git commit 
+# Вспоминаем что забыли добавить в коммит second.php
+git add second.php
+git commit --amend --no-edit
+```
+
+---
