@@ -57,3 +57,13 @@
 3. Перейти по ссылке: 
 `https://api.telegram.org/botXXXXXXXXXXXXXXXXXXXXXXX/getUpdates`,  
 где, `XXXXXXXXXXXXXXXXXXXXXXX` - токен вашего бота, полученный ранее.
+
+---
+
+#### Локальное тестирование Telegram бота с помощью ngrok
+
+1. Запускаем локальный проект через ngrok: `ngrok http -host-header=rewrite site.com`
+   - установка ngrok описана [здесь](https://github.com/kostyashelest/notes/blob/master/ubuntu.md#%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D1%8B%D0%B9-%D0%B2-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B5-ngrok)
+2. Берем адрес ngrok и проставляем его в вубхук: `https://api.telegram.org/bot{your_token}/setWebhook?url=https://add.ngrok.io/api/tg-bot`
+   - адрес ngrok указывать с https протоколом 
+   - указывать точный путь к api
