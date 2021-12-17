@@ -4,12 +4,14 @@
 
 ## Содержание
 
-#### [1. Codeception](codeception.md)
-#### [2. Codeceptjs](codeceptjs.md)
-#### [3. Cron](cron.md)
-#### [4. Docker](docker.md)
-#### [5. Git](git.md)
-#### [6. Markdown](markdown.md)
-#### [7. MySQL](mysql.md)
-#### [8. Ubuntu](ubuntu.md)
-#### [9. Telegram](telegram.md)
+#### [1. PHPUnit](phpunit.md)
+#### [2. Codeception](codeception.md)
+#### [3. Codeceptjs](codeceptjs.md)
+#### [4. Cron](cron.md)
+#### [5. Docker](docker.md)
+#### [6. Git](git.md)
+#### [7. Markdown](markdown.md)
+#### [8. MySQL](mysql.md)
+#### [9. Ubuntu](ubuntu.md)
+#### [10. Telegram](telegram.md)
+#### [11. Bash](bash.md)
