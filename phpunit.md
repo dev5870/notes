@@ -13,3 +13,20 @@
   - `vendor/bin/phpunit --filter methodName path/to/file.php`
 - использование транзакций (для отката БД к первоначальному состоянию) - `use DatabaseTransactions;`
 - использование фейкеров - `use WithFaker;`, далее обращаемся к фейкеру: `$this->faker->email;`
+
+### 1.2 Настройка БД
+
+- Изначально настройки для БД берутся из phpunit.xml:
+
+```
+         <server name="DB_CONNECTION" value="sqlite"/>
+         <server name="DB_DATABASE" value=":memory:"/>
+```
+
+- Если строки закомментированы, берутся настройки из конфига указанного в phpunit.xml:
+
+```
+        <server name="APP_ENV" value="testing"/>
+```
+
+- То есть, из файла `.env.testing`, если такой файл отсутствует берётся информация из `.env`
