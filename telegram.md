@@ -68,3 +68,38 @@
    - адрес ngrok указывать с https протоколом 
    - указывать точный путь к api
    - не будет работать с включенным vpn
+
+---
+
+#### Структура telegram данных для тестирования бота по api через postman
+
+```json
+{
+  "update_id": 12345678,
+  "message": {
+    "message_id": 111,
+    "from": {
+      "id": 77777777,
+      "is_bot": false,
+      "first_name": "Test",
+      "username": "David",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 77777777,
+      "first_name": "Test",
+      "username": "David",
+      "type": "private"
+    },
+    "date": 1640776799,
+    "text": "/start",
+    "entities": [
+      {
+        "offset": 0,
+        "length": 6,
+        "type": "bot_command"
+      }
+    ]
+  }
+}
+```
