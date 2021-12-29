@@ -13,6 +13,9 @@
   - `vendor/bin/phpunit --filter methodName path/to/file.php`
 - использование транзакций (для отката БД к первоначальному состоянию) - `use DatabaseTransactions;`
 - использование фейкеров - `use WithFaker;`, далее обращаемся к фейкеру: `$this->faker->email;`
+- запуск всех тестов:
+  - `vendor/bin/phpunit`
+  - `php artisan test`
 
 ### 1.2 Настройка БД
 

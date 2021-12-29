@@ -67,3 +67,4 @@
 2. Берем адрес ngrok и проставляем его в вубхук: `https://api.telegram.org/bot{your_token}/setWebhook?url=https://add.ngrok.io/api/tg-bot`
    - адрес ngrok указывать с https протоколом 
    - указывать точный путь к api
+   - не будет работать с включенным vpn
