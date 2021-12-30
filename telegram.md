@@ -73,6 +73,8 @@
 
 #### Структура telegram данных для тестирования бота по api через postman
 
+- без callback секции:
+
 ```json
 {
   "update_id": 12345678,
@@ -100,6 +102,59 @@
         "type": "bot_command"
       }
     ]
+  }
+}
+```
+
+- с callback секцией:
+
+```json
+{
+  "update_id": 12345678,
+  "callback_query": {
+    "id": "11111111111111111111111",
+    "from": {
+      "id": 77777777,
+      "is_bot": false,
+      "first_name": "David",
+      "username": "Test",
+      "language_code": "ru"
+    },
+    "message": {
+      "message_id": 111,
+      "from": {
+        "id": 22222222222,
+        "is_bot": true,
+        "first_name": "bot_name",
+        "username": "NameBot"
+      },
+      "chat": {
+        "id": 77777777,
+        "first_name": "David",
+        "username": "Test",
+        "type": "private"
+      },
+      "date": 1640790944,
+      "text": "Button name on telegram:",
+      "reply_markup": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "userName",
+              "callback_data": "test_data"
+            }
+          ],
+          [
+            {
+              "text": "userName2",
+              "callback_data": "test_data2"
+            }
+          ]
+        ]
+      }
+    },
+    "chat_instance": "33333333333333333333333",
+    "data": "test_data2"
   }
 }
 ```
