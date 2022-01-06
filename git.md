@@ -23,6 +23,9 @@
 | `git remote set-url origin new.git.url/here` | Установить новый remote origin url |
 | `git log origin/branch-name..HEAD` | Просмотр незапушенных комитов |
 | `git branch -m old_branch_name new_branch_name` | Переименовать ветку |
+| `git diff ветка1 ветка2` | Сравнение изменений между двумя ветками |
+| `git diff --name-only ветка1 ветка2` | Список измененных файлов |
+| `git diff --name-status ветка1 ветка2` | Список измененных файлов со статусами (удален/изменен/добавлен) |
 
 ---
 
