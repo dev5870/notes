@@ -108,6 +108,18 @@
 | `create database db_name` | Создание базы данных |
 | `create user 'userName'@'localhost' identified by 'password'` | Создание пользователя БД |
 
+#### Создание таблицы
+
+```mysql
+CREATE TABLE persons
+(
+    id  int not null auto_increment primary key,
+    last_name  varchar(255),
+    first_name varchar(255),
+    phone   varchar(255)
+);
+```
+
 #### UPDATE
 
 | Команда | Описание |
@@ -120,6 +132,7 @@
 | Команда | Описание |
 | ------------- | ------------- |
 | `drop user 'userName'@'localhost'` | Удаление пользователя БД |
+| `drop table persons` | Удаление таблицы |
 
 #### SELECT
 
@@ -330,7 +343,7 @@
   
 Запрос:
   
-```
+```mysql
 SELECT table_schema "DB Name", 
 Round(Sum(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB" 
 FROM   information_schema.tables 
@@ -359,7 +372,7 @@ GROUP  BY table_schema;
 
 Запрос:
 
-```
+```mysql
 SELECT
 table_name AS "Table",  
 round(((data_length + index_length) / 1024 / 1024), 2) as size   
@@ -390,7 +403,7 @@ ORDER BY size DESC;
 
 Запрос:
 
-```
+```mysql
 SELECT
     TABLE_NAME,
     TABLE_COLLATION,
