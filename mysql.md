@@ -135,7 +135,7 @@ values(LEFT(UUID(), 15), LEFT(UUID(), 16), concat(799912345, FLOOR(RAND()*(25-10
 
 ```mysql
 INSERT INTO persons (last_name, first_name, phone)
-SELECT last_name, first_name, concat(799912345, FLOOR(RAND()*(25-10+1))+10)
+SELECT concat(left(last_name, 30), uuid()), concat(left(first_name, 29), uuid()), concat(799912345, FLOOR(RAND()*(25-10+1))+10)
 FROM   persons
 WHERE  id > 1
 ```
