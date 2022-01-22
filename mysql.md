@@ -84,22 +84,24 @@
 
 #### Основные команды
 
-| Команда | Описание |
-| ------- | -------- |
-| `mysql -u root -p`  | Авторизация под пользователем root  |
-| `mysql.server start` | Start mysql на macos  |
-| `sudo service mysql start/restart/stop` | Старт, рестарт, стоп mysql в Ubuntu |
-| `mysqldump -uroot -p db_name > file_name.sql` | Бэкап базы данных |
-| `mysql db_name -u user_name -p < dump.sql` | Залить базу на сервер mysql |
-| `show databases` | Показать список всех баз данных |
-| `use db_name` | Переход в определенную базу данных |
-| `show tables` | Показать все таблицы в базе данных |
-| `show columns from table_name` | Показать все столбцы в таблице |
-| `select count(*) from table_name` | Считаем количество записей в таблице |
-| `select count(distinct user_id) from balance_log` | Подсчет уникальных значений в столбце |
-| `truncate table tb_name` | Очистить таблицу |
-| `alter table table_name convert to character set utf8mb4 collate utf8mb4_unicode_ci` | Изменение кодировки таблицы |
-| `git reset --keep HEAD@{1}` | Сброс последнего pull |
+| Команда                                                                              | Описание                                       |
+|--------------------------------------------------------------------------------------|------------------------------------------------|
+| `mysql -u root -p`                                                                   | Авторизация под пользователем root             |
+| `mysql.server start`                                                                 | Start mysql на macos                           |
+| `sudo service mysql start/restart/stop`                                              | Старт, рестарт, стоп mysql в Ubuntu            |
+| `mysqldump -uroot -p db_name > file_name.sql`                                        | Бэкап базы данных                              |
+| `mysql db_name -u user_name -p < dump.sql`                                           | Залить базу на сервер mysql                    |
+| `show databases`                                                                     | Показать список всех баз данных                |
+| `use db_name`                                                                        | Переход в определенную базу данных             |
+| `show tables`                                                                        | Показать все таблицы в базе данных             |
+| `show columns from table_name`                                                       | Показать все столбцы в таблице                 |
+| `show index from persons`                                                            | Отобразить индексы для таблицы                 |
+ | `create index index_name on tb_name (column_name)`                                   | Создание простого индекса для ускорения поиска |
+| `select count(*) from table_name`                                                    | Считаем количество записей в таблице           |
+| `select count(distinct user_id) from balance_log`                                    | Подсчет уникальных значений в столбце          |
+| `truncate table tb_name`                                                             | Очистить таблицу                               |
+| `alter table table_name convert to character set utf8mb4 collate utf8mb4_unicode_ci` | Изменение кодировки таблицы                    |
+| `git reset --keep HEAD@{1}`                                                          | Сброс последнего pull                          |
 
 #### CREATE
 
