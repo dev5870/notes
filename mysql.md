@@ -108,7 +108,7 @@
 | `create database db_name` | Создание базы данных |
 | `create user 'userName'@'localhost' identified by 'password'` | Создание пользователя БД |
 
-#### Создание таблицы
+##### Создание таблицы
 
 ```mysql
 CREATE TABLE persons
@@ -118,6 +118,15 @@ CREATE TABLE persons
     first_name varchar(255),
     phone   varchar(255)
 );
+```
+
+#### INSERT
+
+##### Вставка записи с рандомными значениями
+
+```mysql
+insert into persons (last_name, first_name, phone)
+values(LEFT(UUID(), 15), LEFT(UUID(), 16), concat(799912345, FLOOR(RAND()*(25-10+1))+10))
 ```
 
 #### UPDATE
