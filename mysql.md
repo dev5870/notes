@@ -129,6 +129,17 @@ insert into persons (last_name, first_name, phone)
 values(LEFT(UUID(), 15), LEFT(UUID(), 16), concat(799912345, FLOOR(RAND()*(25-10+1))+10))
 ```
 
+##### Вставка рандомных записей с удвоением
+
+*Запрос выбирает все записи из бд и добавляет столько же новых*
+
+```mysql
+INSERT INTO persons (last_name, first_name, phone)
+SELECT last_name, first_name, concat(799912345, FLOOR(RAND()*(25-10+1))+10)
+FROM   persons
+WHERE  id > 1
+```
+
 #### UPDATE
 
 | Команда | Описание |
