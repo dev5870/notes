@@ -96,8 +96,9 @@
 | `show tables`                                                                        | Показать все таблицы в базе данных             |
 | `show columns from table_name`                                                       | Показать все столбцы в таблице                 |
 | `show index from persons`                                                            | Отобразить индексы для таблицы                 |
- | `create index index_name on tb_name (column_name)`                                   | Создание простого индекса для ускорения поиска |
+| `create index index_name on tb_name (column_name)`                                   | Создание простого индекса для ускорения поиска |
 | `drop index index_name on tb_name` | Удаление индекса                               |
+| `alter table orders drop foreign key fk_client_id` | Удаление внешнего ключа                        |
 | `select count(*) from table_name`                                                    | Считаем количество записей в таблице           |
 | `select count(distinct user_id) from balance_log`                                    | Подсчет уникальных значений в столбце          |
 | `truncate table tb_name`                                                             | Очистить таблицу                               |
