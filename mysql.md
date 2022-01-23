@@ -157,6 +157,14 @@ WHERE  id > 1
 | `drop user 'userName'@'localhost'` | Удаление пользователя БД |
 | `drop table persons` | Удаление таблицы |
 
+#### FOREIGN KEY
+
+*Содание внешнего ключа (две таблицы: orders, clients)*
+
+```mysql
+alter table mysql_study_db_1.orders add constraint fk_client_id foreign key (client_id) references mysql_study_db_1.clients(id) on delete cascade
+```
+
 #### SELECT
 
 | Команда | Описание |
