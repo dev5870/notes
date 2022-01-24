@@ -443,3 +443,17 @@ SELECT
 FROM information_schema.TABLES
 WHERE TABLE_SCHEMA IN ( 'db_name')
 ```
+
+#### 10. Задача:
+
+*Посчитать количество записей и сгруппировать по дате (дата хранится в формате Unix)*
+
+Запрос:
+
+```mysql
+SELECT DATE(FROM_UNIXTIME(created_at)) AS created_at,
+       COUNT(*) AS NumRow
+FROM   user
+GROUP BY DATE(FROM_UNIXTIME(created_at))
+ORDER BY created_at
+```
