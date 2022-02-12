@@ -446,6 +446,20 @@ WHERE TABLE_SCHEMA IN ( 'db_name')
 
 #### 10. Задача:
 
+*Посчитать количество записей и сгруппировать по дате (дата хранится в формате Unix)*
+
+Запрос:
+
+```mysql
+SELECT DATE(FROM_UNIXTIME(created_at)) AS created_at,
+       COUNT(*) AS NumRow
+FROM   user
+GROUP BY DATE(FROM_UNIXTIME(created_at))
+ORDER BY created_at
+```
+
+#### 11. Задача:
+
 *Вывести записи, которые были добавлены в определенную дата и добавлялись в течении последующей недели*
 
 Запрос:
