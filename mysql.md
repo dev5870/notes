@@ -443,3 +443,16 @@ SELECT
 FROM information_schema.TABLES
 WHERE TABLE_SCHEMA IN ( 'db_name')
 ```
+
+#### 10. Задача:
+
+*Вывести записи, которые были добавлены в определенную дата и добавлялись в течении последующей недели*
+
+Запрос:
+
+```mysql
+select *
+from orders
+where tm_create between '2022-01-16 00:00:00' and '2022-01-16 23:59:59' + interval 1 week
+```
+
