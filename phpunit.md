@@ -15,6 +15,10 @@
 - запуск всех тестов:
   - `vendor/bin/phpunit`
   - `php artisan test`
+- параллельный запуск тестов:
+  - `./vendor/bin/paratest --runner WrapperRunner -p 16`
+- анализ покрытия тестами (с формированием отчета):
+  - `XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html /home/pc/workspace/www/site/report/`
 
 ### 1.2 Настройка БД
 

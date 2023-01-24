@@ -4,28 +4,29 @@
 
 #### Основное
 
-| Команда | Описание |
-| ------- | -------- |
-| `git pull origin master` | PULL ветки master в локальную ветку master |
-| `git pull origin dfdev-1844` | PULL удаленной ветки в локальную ветку |
-| `git checkout -b dfdev-1844` | Создание и переключение на новую ветку. *NOTE: Имеет значение с какой ветки создаем и переходим! Предварительно переходим в master* |
-| `git push origin dfdev-codeception` | PUSH локальной ветки в удаленный репозиторий |
-| `git branch -d dfdev-seoOpitmize` | Удаление локальной ветки |
-| `git push origin :old_branch ` | Удаление Remote ветки |
-| `git stash save -u` | Спрятать изменения, если файлы не в индексе |
-| `git stash save` | Спрятать изменения, если файлы в индексе |
-| `git stash pop` | Вернуть изменения к работе |
-| `git branch --merged master -a` | Отобразить список слитых в мастер веток (локальные и удаленные) |
-| `git fetch` | Как git pull, только без merge. Fetch подтягивает удаленные ветки, но не объединяет их с локальными. |
-| `git commit --amend -m "New commit"` | Изменить описание последнего коммита |
-| gitignore через exclude | В файле `.git/info/exclude` можно добавлять правила |
-| `git remote show origin` | Показать remote url |
-| `git remote set-url origin new.git.url/here` | Установить новый remote origin url |
-| `git log origin/branch-name..HEAD` | Просмотр незапушенных комитов |
-| `git branch -m old_branch_name new_branch_name` | Переименовать ветку |
-| `git diff ветка1 ветка2` | Сравнение изменений между двумя ветками |
-| `git diff --name-only ветка1 ветка2` | Список измененных файлов |
-| `git diff --name-status ветка1 ветка2` | Список измененных файлов со статусами (удален/изменен/добавлен) |
+| Команда                                       | Описание                                                                                                                            |
+|-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| `git pull origin master`                      | PULL ветки master в локальную ветку master                                                                                          |
+| `git pull origin dfdev-1844`                  | PULL удаленной ветки в локальную ветку                                                                                              |
+| `git checkout -b dfdev-1844`                  | Создание и переключение на новую ветку. *NOTE: Имеет значение с какой ветки создаем и переходим! Предварительно переходим в master* |
+| `git push origin dfdev-codeception`           | PUSH локальной ветки в удаленный репозиторий                                                                                        |
+| `git branch -d dfdev-seoOpitmize`             | Удаление локальной ветки                                                                                                            |
+| `git push origin :old_branch `                | Удаление Remote ветки                                                                                                               |
+| `git stash save -u`                           | Спрятать изменения, если файлы не в индексе                                                                                         |
+| `git stash save`                              | Спрятать изменения, если файлы в индексе                                                                                            |
+| `git stash pop`                               | Вернуть изменения к работе                                                                                                          |
+| `git stash clear`                              | Очистить все спрятанные изменения                                                                                                   |
+| `git branch --merged master -a`               | Отобразить список слитых в мастер веток (локальные и удаленные)                                                                     |
+| `git fetch`                                   | Как git pull, только без merge. Fetch подтягивает удаленные ветки, но не объединяет их с локальными.                                |
+| `git commit --amend -m "New commit"`          | Изменить описание последнего коммита                                                                                                |
+| gitignore через exclude                       | В файле `.git/info/exclude` можно добавлять правила                                                                                 |
+| `git remote show origin`                      | Показать remote url                                                                                                                 |
+| `git remote set-url origin new.git.url/here`  | Установить новый remote origin url                                                                                                  |
+| `git log origin/branch-name..HEAD`            | Просмотр незапушенных комитов                                                                                                       |
+| `git branch -m old_branch_name new_branch_name` | Переименовать ветку                                                                                                                 |
+| `git diff ветка1 ветка2`                      | Сравнение изменений между двумя ветками                                                                                             |
+| `git diff --name-only ветка1 ветка2`          | Список измененных файлов                                                                                                            |
+| `git diff --name-status ветка1 ветка2`        | Список измененных файлов со статусами (удален/изменен/добавлен)                                                                     |
 
 ---
 
