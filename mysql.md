@@ -470,3 +470,14 @@ from orders
 where tm_create between '2022-01-16 00:00:00' and '2022-01-16 23:59:59' + interval 1 week
 ```
 
+#### 12. Задача
+
+*Обновление колонки с двумя join*
+
+```mysql
+update card_auto_refills
+    join cards on card_auto_refills.card_id = cards.id
+    join users on cards.user_id = users.id
+set card_auto_refills.active = 0
+where users.id = 1
+```
