@@ -481,3 +481,39 @@ update card_auto_refills
 set card_auto_refills.active = 0
 where users.id = 1
 ```
+
+#### 13. Задача
+
+*Сформировать ссылку на кабинет пользователя, посчитать кол-во его карт и дату последней транзакции*
+
+```mysql
+select concat('https://lk.site.com/user/', id, '/edit') as url,
+       cards_count,
+       (select processed_at from transactions where id = (
+           select max(id) from transactions where user_account_id in(
+               select id from user_accounts where user_id = t1.id
+           )
+       )) t_processed_at
+from (
+         select u.id,
+                count(c.id) cards_count,
+                sum(case when c.description is not null then 1 else 0 end) c_type
+         from users u
+                  join cards c on c.user_id = u.id
+         where u.type = 0
+         group by u.id
+         having c_type > 10
+         order by count(c.id) desc
+     ) t1
+```
+
+#### 14. Задача
+
+*Среднее количество дней действия игрового аккаунта с группировкой по его типу*
+
+```mysql
+select game_accounts.type, format(avg(datediff(game_accounts.deleted_at, game_accounts.created_at)), 0) as avg_days
+from game_accounts
+group by game_accounts.type
+order by avg_days desc
+```
