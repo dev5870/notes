@@ -35,3 +35,20 @@ gnome-terminal --geometry=101x26-2320+0
 # правый нижний
 gnome-terminal --geometry=101x26-2320-20
 ```
+
+### 3. Очистка (рекурсивно) файлов по расширению
+
+```bash
+#!/bin/bash
+
+# Путь к папке с файлами .log
+logs_dir="/home/user/workspace/project/storage/logs"
+
+# Поиск всех файлов .log в указанной папке
+log_files=$(find "$logs_dir" -type f -name "*.log")
+
+# Очистка каждого файла с помощью команды echo > file.log
+for file in $log_files; do
+  echo > "$file"
+done
+```
