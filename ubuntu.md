@@ -277,7 +277,7 @@ request_slowlog_timeout = 2s
 
 - Устанавливаем snapd: `sudo apt install snapd`
 - Устанавливаем ngrok: `sudo snap install ngrok`
-- Создаем тунель (делаем доступным локальный хост в интернете): `ngrok http -host-header=rewrite site.com` (site.com - любой адрес из локального хоста) 
+- Создаем тунель (делаем доступным локальный хост в интернете): `ngrok http --host-header=rewrite https://site.com` (site.com - любой адрес из локального хоста) 
 - В ответ получаем адрес для доступа к локальному хосту
 
 ---
