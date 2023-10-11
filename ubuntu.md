@@ -245,12 +245,22 @@ curl --location --request POST 'https://site.com/api/tg-bot' --header 'Content-T
 
 #### Решение ошибки: connect() to unix:/run/php/php8.0-fpm.sock failed (13: Permission denied) while connecting to upstream
 
+##### Решение 1
 - В файле: `/etc/nginx/nginx.conf`, указать своего юзера: `user www-data;`
 - В файле: `/etc/php/7.4/fpm/pool.d/www.conf`, указать своего пользователя и группу:
 ```
 user = www-data
 group = www-data
 ```
+
+##### Решение 2
+- Проверяем чтобы у пользователя были права на просмотр директории:
+
+`sudo -u www-data stat /home/user/workspace/api/public/`
+
+- Если доступа нет, добавляем в группу:
+
+`gpasswd -a www-data user`
 
 ---
 
