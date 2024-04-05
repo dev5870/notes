@@ -13,6 +13,7 @@
 #### [7. Markdown](markdown.md)
 #### [8. MySQL](mysql.md)
 #### [9. Ubuntu](ubuntu.md)
+#### [- Install LEMP on Ubuntu](ubuntu_lemp.md)
 #### [10. Telegram](telegram.md)
 #### [11. Bash](bash.md)
 #### [12. Laravel](laravel.md)
