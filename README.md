@@ -15,6 +15,8 @@
 #### [9. Ubuntu](ubuntu.md)
 #### [- Install LEMP on Ubuntu](ubuntu_lemp.md)
 #### [- Install Node.js on Ubuntu](ubuntu_install_nodejs.md)
+#### [- Install Clickhouse on Ubuntu](ubuntu_install_clickhouse.md)
+#### [- How to Set Up SSH Keys on Ubuntu](set_up_ssh_keys_ubuntu.md)
 #### [10. Telegram](telegram.md)
 #### [11. Bash](bash.md)
 #### [12. Laravel](laravel.md)
