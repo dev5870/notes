@@ -71,3 +71,23 @@ git commit --amend --no-edit
 ```
 
 ---
+
+#### Git large files
+
+Install
+
+`sudo apt-get install git-lfs`
+
+Init lfs
+
+`git lfs install`
+
+Track large file
+
+`git lfs track large.json`
+
+Then: `git add, commit, push`
+
+Check large files
+
+`git lfs ls-files`
