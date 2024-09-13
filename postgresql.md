@@ -29,6 +29,10 @@ or
 #### Drop column from table
 
 ```shell
-ALTER TABLE address
-DROP COLUMN data;
+alter table address
+drop column data;
 ```
+
+#### Drop table
+
+`drop table table_name;`
