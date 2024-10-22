@@ -2,6 +2,18 @@
 
 ---
 
+### Create db
+
+`create database test_db;`
+
+### Create user
+
+`create user "user" with password 'password';`
+
+### Privileges
+
+`grant all privileges on database test_db to "user";`
+
 ### Connect to db
 
 #### Log in to postgress
